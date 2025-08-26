@@ -5,8 +5,16 @@ on: [push]
 jobs:
   Test:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout-Test
+        uses: actions/checkout@v2
+      - run: python hello.py
     
-
   Build:
     needs: Test
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout-Build
+        uses: actions/checkout@v2.0.0
+      - name: Create artifact
+        uses: actions/upload-artifact@v1
