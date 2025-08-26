@@ -1,0 +1,12 @@
+name: python-cicd
+
+on: [push]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    
+
+  Build:
+    needs: Test
+    runs-on: ubuntu-latest
