@@ -6,15 +6,21 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout-Test
+      - name: Checkout Repository
         uses: actions/checkout@v2
+
+      - name: Running hello.py
       - run: python hello.py
     
   Build:
     needs: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout-Build
+      - name: Checkout Repository
         uses: actions/checkout@v2.0.0
-      - name: Create artifact
+        
+      - name: Uploading hello.py to artifacts
         uses: actions/upload-artifact@v1
+        with: 
+          name: hello.py
+          path: hello.py
