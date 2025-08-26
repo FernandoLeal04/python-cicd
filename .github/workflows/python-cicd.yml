@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Uploading hello.py to artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with: 
           name: hello.py
           path: hello.py
